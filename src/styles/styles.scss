@@ -1,0 +1,13 @@
+$bgColor: #ccc;
+$headingColor: #11a;
+$fonts: Arial, Helvetica, sans-serif;
+
+body {
+    background: $bgColor;
+}
+
+h1 {
+    color: $headingColor;
+    font-family: $fonts;
+    text-align: center;
+}
