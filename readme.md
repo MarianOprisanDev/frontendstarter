@@ -1,5 +1,4 @@
-# This is a starter file for front-end projects
-## Using Sass 
+## This is a starter file for front-end projects 
 ***
 
 ### Requirements:

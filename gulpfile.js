@@ -21,23 +21,26 @@ gulp.task('minjs', () => {
 
 // compile sass, minify sass css files and copy them to dist/
 gulp.task('styles', () => {
-    gulp.src('src/sass/*.scss')
+    gulp.src('src/styles/*.scss')
         // if sass() returns an error, we must log it ourselves
         .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS())
         .pipe(gulp.dest('dist/css'));
-    gulp.src('src/sass/*.scss')
+    gulp.src('src/styles/*.css')
         .pipe(cleanCSS())
         .pipe(gulp.dest('dist/css'));
 });
 
 // maintenance: run all tasks
-gulp.task('main', ['copyHtml', 'minjs', 'sass']);
+gulp.task('main', ['copyHtml', 'minjs', 'styles']);
 
 // showing instructions
 gulp.task('default', () => {
+    console.log('=================================');
     console.log('If the dist folder is missing from the project, run gulp main to set it up.');
     console.log('Other gulp tasks: copyHtml, minjs, styles.');
     console.log('See gulpfile for more info on each task.')
+    console.log('=================================');
 })
 
 // watch for file changes
